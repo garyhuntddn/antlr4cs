@@ -42,6 +42,12 @@
     Description="When true, the generated classes are marked as abstract." />
   <BoolProperty
     Category="ANTLR"
+    Name="UseInternalAccessModifier"
+    DisplayName="Use Internal Access Modifier"
+    Default="CSharp"
+    Description="When true, the generated classes are marked as internal." />
+  <BoolProperty
+    Category="ANTLR"
     Name="IncludeDebuggerNonUserCodeAttribute"
     DisplayName="Include DebuggerNonUserCode attribute"
     Default="false"

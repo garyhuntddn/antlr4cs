@@ -14,6 +14,7 @@ namespace Antlr4.Codegen.Model
         public readonly string ANTLRVersion;
         public readonly string TokenLabelType;
         public readonly string InputSymbolType;
+        public readonly string AccessModifier;
         public readonly bool IncludeDebuggerNonUserCodeAttribute; // from -DincludeDebuggerNonUserCodeAttribute
         public readonly bool IncludeClsCompliantAttribute;
 
@@ -26,6 +27,7 @@ namespace Antlr4.Codegen.Model
             ANTLRVersion = AntlrTool.VERSION;
             TokenLabelType = g.GetOptionString("TokenLabelType");
             InputSymbolType = TokenLabelType;
+            AccessModifier = System.StringComparer.OrdinalIgnoreCase.Equals( g.GetOptionString("useInternalAccessModifier"), "true" ) ? "internal" : "public";
             IncludeDebuggerNonUserCodeAttribute = System.StringComparer.OrdinalIgnoreCase.Equals( g.GetOptionString("includeDebuggerNonUserCodeAttribute"), "true" );
             IncludeClsCompliantAttribute = !System.StringComparer.OrdinalIgnoreCase.Equals( g.GetOptionString("excludeClsCompliantAttribute"), "true"); // default is to include this to maintain existing behaviour
         }

@@ -121,6 +121,12 @@ namespace Antlr4.Build.Tasks
             set;
         }
 
+        public bool useInternalAccessModifier
+        {
+            get;
+            set;
+        }
+      
         public bool ExcludeClsCompliantAttribute
         {
             get;
@@ -298,6 +304,9 @@ namespace Antlr4.Build.Tasks
 
                 if (UseCSharpGenerator)
                 {
+                    if (UseInternalAccessModifier)
+                        arguments.Add("-DuseInternalAccessModifier");
+
                     if (ExcludeClsCompliantAttribute)
                         arguments.Add("-DexcludeClsCompliantAttribute");
 

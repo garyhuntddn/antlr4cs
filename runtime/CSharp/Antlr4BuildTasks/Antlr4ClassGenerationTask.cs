@@ -151,6 +151,12 @@ namespace Antlr4.Build.Tasks
             set;
         }
 
+        public bool UseInternalAccessModifier
+        {
+            get;
+            set;
+        }
+        
         public bool IncludeDebuggerNonUserCodeAttribute
         {
             get;
